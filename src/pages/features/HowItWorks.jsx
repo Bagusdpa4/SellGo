@@ -18,31 +18,45 @@ export const HowItWorks = () => {
   const steps = [
     {
       step: "STEP 01",
-      title: "MCP Perencanaan Jadwal",
-      desc: "Menyusun jadwal kerja cleaning secara terstruktur untuk setiap area dan periode tertentu.",
-      image: "/step/step01.png",
-      bgColor: "text-sky-400",
+      title: "Absence",
+      subtitle: "Absensi Cerdas & Validasi Lokasi",
+      desc: "Fitur absensi berbasis selfie dan geotagging memberikan transparansi penuh kepada manajemen terkait waktu dan lokasi aktual sales Anda memulai hari.",
+      images: "/step/step01.png",
     },
     {
       step: "STEP 02",
-      title: "Penugasan Operasional",
-      desc: "Menugaskan pekerjaan kepada petugas sesuai jadwal dan kebutuhan operasional.",
-      image: "/step/step02.png",
-      bgColor: "text-sky-400",
+      title: "Pencatatan Awal",
+      subtitle: "Jumlah Stok yang diambil di Gudang",
+      desc: "Ucapkan selamat tinggal pada selisih barang. SellGo mengotomatisasi pencatatan stok yang dibawa sales dari gudang langsung, memastikan setiap pergerakan produk terdata.",
+      images: "/step/step02.png",
     },
     {
       step: "STEP 03",
-      title: "Monitoring Real-time",
-      desc: "Memantau status kebersihan dan kinerja petugas secara langsung melalui dashboard.",
-      image: "/step/step03.png",
-      bgColor: "text-sky-400",
+      title: "Jadwalkan Kunjungan",
+      subtitle: "Pemetaan Rute Teroptimasi",
+      desc: "Buat setiap perjalanan lebih efisien dan produktif. Sistem SellGo memungkinkan penyusunan rute toko harian yang strategis dan real-time. Tidak ada lagi rute tumpang tindih atau waktu berharga yang terbuang di jalan.",
+      images: "/step/step03.png",
     },
     {
       step: "STEP 04",
-      title: "Evaluasi Data-Driven",
-      desc: "Melakukan evaluasi berbasis data untuk meningkatkan kualitas dan efisiensi kerja.",
-      image: "/step/step04.png",
-      bgColor: "text-sky-400",
+      title: "Melakukan Kunjungan",
+      subtitle: "",
+      desc: "Kunjungan dilakukan berdasarkan jadwal dan prioritas yang jelas, meningkatkan peluang konversi karena tim fokus pada target yang tepat sasaran.",
+      images: ["/step/step04.png", "/step/step04-2.png"],
+    },
+    {
+      step: "STEP 05",
+      title: "Melakukan Transaksi",
+      subtitle: "Transaksi & Pelaporan Instan",
+      desc: "Setiap transaksi dicatat secara real-time, mempercepat alur kerja, dan memberikan data hasil dari penjualan.",
+      images: ["/step/step05.png", "/step/step05-2.png"],
+    },
+    {
+      step: "STEP 06",
+      title: "Rekonsiliasi & Pelaporan",
+      subtitle: "Validasi Akhir & Analitik Penjualan",
+      desc: "Proses rekonsiliasi setoran tunai dan sisa produk antara sales lapangan dan admin gudang kini terdigitalisasi dan tervalidasi oleh sistem. Akses laporan penjualan harian hingga bulanan secara instan untuk memantau performa tim dan merancang strategi bisnis ke depan.",
+      images: "/step/step06.png",
     },
   ];
 
@@ -53,17 +67,25 @@ export const HowItWorks = () => {
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
 
       {/* Header Halaman */}
+      <div className="mb-4 flex w-full justify-center lg:mb-20 xl:mb-10">
+        <img
+          src="/Teks Sellgo.png"
+          alt="Teks Sellgo Logo"
+          className="h-auto w-[40%] object-contain lg:w-[50%] xl:w-[15%]"
+        />
+      </div>
       <div className="mb-10 text-center lg:mb-20 xl:mb-16">
         <h1 className="text-primary text-2xl font-black tracking-tight lg:text-6xl xl:text-3xl">
-          HOW IT WORKS
+          HOW THIS APP WORK
         </h1>
-        <p className="font-semi-bold mt-4 text-sm text-slate-500 lg:mt-8 lg:text-4xl xl:mt-2 xl:text-lg">
-          Alur kerja SHELIA dalam mengelola operasional cleaning
+        <p className="mt-4 text-sm font-medium text-black lg:mt-8 lg:text-4xl xl:mt-2 xl:text-lg">
+          Ubah cara kerja tim sales anda dengan efisiensi dan transparansi di
+          setiap langkah
         </p>
       </div>
 
       {/* Container Step */}
-      <div className="mx-auto flex max-w-5xl flex-col gap-20 lg:gap-40 xl:gap-20">
+      <div className="mx-auto flex max-w-5xl flex-col gap-20 lg:gap-40 xl:gap-0">
         {steps.map((item, index) => (
           <motion.div
             key={index}
@@ -77,22 +99,18 @@ export const HowItWorks = () => {
           >
             {/* Bagian Teks */}
             <div className="flex-1 space-y-4 text-left">
-              <span className="text-primary inline-block rounded-full bg-blue-200 px-6 py-2 text-sm font-bold lg:text-2xl xl:text-lg">
+              <span className="text-primary inline-block rounded-full bg-blue-200 px-6 py-2 text-sm font-bold lg:text-4xl xl:text-lg">
                 {item.step}
               </span>
-              <h2
-                className={`text-2xl font-black leading-tight xl:text-5xl ${item.bgColor} lg:text-6xl`}
-              >
-                {item.title.split(" ").map((word, i) => (
-                  <span
-                    key={i}
-                    className={i === 0 ? "text-primary block" : "block"}
-                  >
-                    {word}{" "}
-                  </span>
-                ))}
-              </h2>
-              <p className="max-w-md text-sm font-bold leading-relaxed text-slate-500 lg:text-4xl xl:text-xl">
+              <div className="space-y-1">
+                <h2 className="text-primary text-3xl font-black leading-tight lg:text-7xl xl:text-5xl">
+                  {item.title}
+                </h2>
+                <p className="text-lg font-extrabold leading-tight text-sky-400 lg:text-5xl xl:text-2xl">
+                  {item.subtitle}
+                </p>
+              </div>
+              <p className="max-w-md text-sm font-medium leading-relaxed text-black lg:text-4xl xl:text-xl">
                 {item.desc}
               </p>
             </div>
@@ -100,7 +118,7 @@ export const HowItWorks = () => {
             {/* Phone Frame Section */}
             <div className="flex w-full flex-1 justify-center">
               <div className="max-w-62.5 lg:max-w-100 xl:max-w-65 w-full">
-                <PhoneFrame screenshot={item.image} />
+                <PhoneFrame screenshot={item.images} index={index} />
               </div>
             </div>
           </motion.div>

@@ -4,46 +4,52 @@ import { useNavigate } from "react-router-dom";
 import { PhoneFrame } from "../../components/assets/phoneFrame/PhoneFrame";
 import { FeatureTabs } from "../../components/assets/features/FeatureTabs";
 import { FaArrowLeft, FaHome, FaCheckCircle } from "react-icons/fa";
-import {
-  MdDashboard,
-  MdAssignment,
-  MdInventory,
-  MdFactCheck,
+import { 
+  MdMap, 
+  MdTimeline, 
+  MdMonetizationOn, 
+  MdInsights, 
+  MdStore, 
+  MdHistory 
 } from "react-icons/md";
 
 export const AllFeatures = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("Dashboard");
+  const [activeTab, setActiveTab] = useState("Tracking System");
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
   }, []);
 
   const features = [
     {
-      id: "Dashboard",
-      icon: <MdDashboard />,
+      id: "Tracking System",
+      icon: <MdMap />,
       contents: [
         {
-          title: "Dashboard Monitoring",
-          subtitle: "Semua yang kamu butuhkan, ada di satu layar.",
+          title: "Tracking & Visit Monitoring System",
+          subtitle: "Pantau Pergerakan &  Data Kunjungan Real-time.",
           image: "/features/Dashboard.png",
           list: [
-            "Jadwal tahunan terorganisir",
-            "Monitoring progress",
-            "Import dari Excel",
-            "Evaluasi mudah",
+            // "Jadwal tahunan terorganisir",
+            // "Monitoring progress",
+            // "Import dari Excel",
+            // "Evaluasi mudah",
           ],
         },
       ],
     },
     {
-      id: "Direct Task",
-      icon: <MdAssignment />,
+      id: "Visit Monitoring",
+      icon: <MdTimeline />,
       contents: [
         {
-          title: "Direct Task",
-          // subtitle: "Penugasan instan tanpa hambatan.",
+          title: "Tracking & Visit Monitoring System",
+          subtitle: "Pantau Pergerakan &  Data Kunjungan Real-time.",
           image: "/features/Direct Task.png",
           list: [
             // "Quick assign",
@@ -55,12 +61,12 @@ export const AllFeatures = () => {
       ],
     },
     {
-      id: "Inventory",
-      icon: <MdInventory />,
+      id: "Revenue",
+      icon: <MdMonetizationOn />,
       contents: [
         {
-          title: "Inventory",
-          // subtitle: "Kontrol stok alat dan bahan pembersih.",
+          title: "Real-time Sales Revenue",
+          subtitle: "Kecepatan Pengambilan Keputusan & Transparansi Arus Kas.",
           image: "/features/Inventory.png",
           list: [
             //   "Update stok otomatis",
@@ -72,12 +78,48 @@ export const AllFeatures = () => {
       ],
     },
     {
-      id: "Stock Opname",
-      icon: <MdFactCheck />,
+      id: "Product Insights",
+      icon: <MdInsights />,
       contents: [
         {
-          title: "Stock Opname",
-          // subtitle: "Audit stok jadi lebih cepat dan akurat.",
+          title: "Product Insights",
+          subtitle: "Optimasi Stok & Atur Strategi Bisnis Sesuai Tren Pasar.",
+          image: "/features/Stock Opname.png",
+          list: [
+            //   "Scan barcode",
+            //   "Rekonsiliasi data",
+            //   "Laporan selisih",
+            //   "Approval digital",
+          ],
+        },
+      ],
+    },
+    {
+      id: "Store Profile",
+      icon: <MdStore />,
+      contents: [
+        {
+          title: "Store Profile",
+          subtitle:
+            "Database Pelanggan  Terintegrasi Langsung Dengan  Profile  Toko.",
+          image: "/features/Stock Opname.png",
+          list: [
+            //   "Scan barcode",
+            //   "Rekonsiliasi data",
+            //   "Laporan selisih",
+            //   "Approval digital",
+          ],
+        },
+      ],
+    },
+    {
+      id: "Billing History",
+      icon: <MdHistory />,
+      contents: [
+        {
+          title: "Billing History",
+          subtitle:
+            "Seluruh rekam jejak transaksi, nota, dan status pembayaran tersimpan rapi secara digital.",
           image: "/features/Stock Opname.png",
           list: [
             //   "Scan barcode",
@@ -100,12 +142,19 @@ export const AllFeatures = () => {
 
       <div className="flex w-full max-w-7xl flex-col items-center">
         {/* Header Section */}
+        <div className="mt-6 flex w-full justify-center">
+          <img
+            src="/Teks Sellgo.png"
+            alt="Teks Sellgo Logo"
+            className="h-auto w-[30%] object-contain lg:w-[40%] xl:w-[20%]"
+          />
+        </div>
         <div className="px-10 py-6 text-center lg:py-20 xl:py-6">
           <h1 className="text-primary py-2 text-2xl font-black uppercase tracking-tight lg:text-7xl xl:text-4xl">
-            All Features
+            Features
           </h1>
           <p className="mt-4 text-sm font-semibold text-slate-500 lg:text-4xl xl:text-lg">
-            Jelajahi seluruh fitur SHELIA untuk mendukung operasional cleaning
+            Lihat apa saja yang dapat anda kelola
           </p>
         </div>
 
