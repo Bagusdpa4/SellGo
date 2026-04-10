@@ -16,7 +16,7 @@ export const IdleOverlay = () => {
     // Set timer ke 30 detik idle
     timeoutRef.current = setTimeout(() => {
       setIsIdle(true);
-    }, 30000);
+    }, 3000);
   };
 
   const handleExitIdle = () => {
@@ -59,10 +59,16 @@ export const IdleOverlay = () => {
             // muted
             loop
             playsInline
+            onLoadStart={() => console.log("⏳ Video: Start loading...")}
+            onCanPlay={() => console.log("✅ Video: Ready to play (buffered).")}
+            onPlay={() => console.log("▶️ Video: Attempting to play...")}
+            onPlaying={() => console.log("🎬 Video: Currently playing (Running).")}
+            onWaiting={() => console.warn("⚠️ Video: Buffering/Waiting...")}
+            onError={(e) => console.error("❌ Video Error:", e)}
             className="absolute inset-0 h-full w-full object-cover opacity-80"
           >
             {/* Path langsung ke root jika file ada di /public/Intro.mp4 */}
-            <source src="/public/SellGo.mp4" type="video/mp4" />
+            <source src="/SellGo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
