@@ -7,81 +7,121 @@ export const WhatIs = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
   const problems = [
-    "Unclear visit activity.",
-    "Difficult team monitoring.",
-    "Delayed reporting.",
-    "Limited visibility on performance.",
-    "Less accurate field data.",
+    "Many sales teams appear active, but lack measurable impact.",
+    "Manual reporting is often delayed, inconsistent, and difficult to verify.",
+    "As a result, businesses struggle to distinguish between activity and actual performance.",
+  ];
+
+  const coreValues = [
+    {
+      title: "Full Visibility",
+      description:
+        "Monitor sales activities in real time across all locations.",
+    },
+    {
+      title: "Accountability You Can Trust",
+      description:
+        "Ensure every visit and transaction is verifiable and recorded.",
+    },
+    {
+      title: "Data-Driven Decisions",
+      description:
+        "Make faster, more accurate decisions based on real field data.",
+    },
+    {
+      title: "Performance Clarity",
+      description:
+        "Identify top performers and areas that require improvement.",
+    },
   ];
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden bg-white px-6 py-8 font-sans lg:px-10 lg:py-12 xl:px-10 xl:py-10">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#f4f7f9] px-6 py-8 font-sans lg:px-20 lg:py-16">
       {/* Background Decor */}
-      <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-sky-100 blur-[120px]" />
 
-      {/* Header Halaman */}
-      <div className="mb-4 flex w-full justify-center lg:mb-10 xl:mb-6">
+      {/* Header Logo - Center */}
+      <div className="mb-12 flex w-full justify-center lg:mb-20">
         <img
           src="/Teks Sellgo.png"
-          alt="Teks Sellgo Logo"
-          className="h-auto w-[40%] object-contain lg:w-[50%] xl:w-[15%]"
+          alt="SellGo Logo"
+          className="h-auto w-[45%] lg:w-[20%]"
         />
       </div>
 
-      {/* Konten Tengah */}
-      <div className="flex grow flex-col items-center justify-center">
+      {/* Main Container */}
+      <div className="mx-auto w-full max-w-4xl grow">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-5xl space-y-12 text-left"
+          className="flex flex-col space-y-16"
         >
-          {/* Section: What is SellGo? */}
-          <div className="space-y-4">
+          {/* Section: What is SellGo? (Rata Kiri) */}
+          <section className="space-y-4 text-left">
             <h1 className="text-primary text-3xl font-black lg:text-7xl xl:text-4xl">
               What is SellGo?
             </h1>
-            <p className="text-base font-medium leading-relaxed text-black lg:text-4xl xl:text-lg">
-              SellGo is a mobile application designed to help businesses monitor
-              field sales activities in one connected system. From team visits
-              to sales performance, everything is recorded more clearly and can
-              be reviewed faster.
+            <p className="max-w-4xl text-base font-medium leading-relaxed text-black lg:text-4xl xl:text-lg">
+              SellGo is not just a sales tracking application. It is a system
+              designed to transform your field sales operations into structured,
+              measurable, and high-performing business activities.
             </p>
-          </div>
+          </section>
 
-          {/* Section: What problem does it solve? */}
-          <div className="space-y-4">
-            <h2 className="text-primary text-2xl font-black lg:text-6xl xl:text-3xl">
-              What problem does it solve?
+          {/* Section: The Challenge (Agak ke Kanan / Center-Left) */}
+          <section className="flex flex-col items-center space-y-4 self-center lg:pl-40">
+            <div className="w-full">
+              <h2 className="text-primary text-3xl font-black lg:text-7xl xl:text-4xl">
+                The Challenge
+              </h2>
+              <ul className="mt-4 space-y-4">
+                {problems.map((problem, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-black lg:h-4 lg:w-4 xl:h-4 xl:w-4" />
+                    <span className="text-base font-medium text-black lg:text-4xl xl:text-lg">
+                      {problem}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Section: Core Value (Rata Kiri Lagi) */}
+          <section className="space-y-6 text-left">
+            <h2 className="text-primary text-3xl font-black lg:text-7xl xl:text-4xl">
+              Core Value
             </h2>
-            <p className="black text-base font-medium lg:text-4xl xl:text-lg">
-              SellGo helps solve common field sales problems such as:
-            </p>
-
-            <ul className="space-y-3 pt-2">
-              {problems.map((problem, index) => (
-                <li key={index} className="black flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500 lg:h-8 lg:w-8 xl:h-4 xl:w-4" />
-                  <span className="text-sm font-medium lg:text-4xl xl:text-base">
-                    {problem}
-                  </span>
-                </li>
+            <div className="space-y-6">
+              {coreValues.map((value, index) => (
+                <div key={index} className="group">
+                  <h3 className="text-base font-bold pb-0 xl:pb-0 lg:pb-4 text-black lg:text-5xl xl:text-lg">
+                    {value.title}
+                  </h3>
+                  <p className="text-base font-normal text-black lg:text-4xl xl:text-lg">
+                    {value.description}
+                  </p>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
+          </section>
+
+          {/* Section: Conclusion (Jorok ke Kanan) */}
+          <section className="self-end pt-10 text-right lg:max-w-4xl">
+            <p className="text-primary text-3xl font-bold lg:text-5xl xl:text-4xl">
+              With SellGo, your sales operations become more transparent, more
+              controlled, and better equipped to scale with confidence.
+            </p>
+          </section>
         </motion.div>
       </div>
 
       {/* Bottom Navigation */}
-      <div className="mt-8 flex w-full justify-center lg:mt-12 xl:mt-10">
+      <div className="mt-16 flex w-full justify-center lg:mt-24 xl:mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,6 +129,7 @@ export const WhatIs = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="flex items-center gap-6 p-3 lg:gap-8 lg:p-6 xl:gap-4 xl:p-4"
         >
+          {/* Tombol Kembali */}
           <button
             onClick={() => navigate(-1)}
             className="group flex cursor-pointer items-center gap-4 rounded-full border border-slate-100 bg-white px-6 py-2 shadow-lg transition-all hover:scale-110 hover:bg-slate-50 lg:px-12 lg:py-8 xl:px-4 xl:py-4"
@@ -99,8 +140,10 @@ export const WhatIs = () => {
             </span>
           </button>
 
+          {/* Divider vertikal tipis agar mirip desain referensi */}
           <div className="h-8 w-1 bg-slate-200 lg:h-16" />
 
+          {/* Tombol Home */}
           <button
             onClick={() => navigate("/")}
             className="bg-primary/10 text-primary hover:bg-primary flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:text-white lg:h-24 lg:w-24 xl:h-14 xl:w-14"
