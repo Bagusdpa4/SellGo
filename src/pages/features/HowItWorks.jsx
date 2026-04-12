@@ -19,43 +19,43 @@ export const HowItWorks = () => {
     {
       step: "STEP 01",
       title: "Absence",
-      subtitle: "Absensi Cerdas & Validasi Lokasi",
-      desc: "Fitur absensi berbasis selfie dan geotagging memberikan transparansi penuh kepada manajemen terkait waktu dan lokasi aktual sales Anda memulai hari.",
-      images: "/step/step01.png",
+      subtitle: "Absence Smart Attendance & Geo-Validation",
+      desc: "Selfie-based attendance and geotagging features provide management with full transparency regarding the precise time and location your sales team starts their day.",
+      images: ["/step/step01.jpg", "/step/step01-2.jpg"],
     },
     {
       step: "STEP 02",
-      title: "Pencatatan Awal",
-      subtitle: "Jumlah Stok yang diambil di Gudang",
-      desc: "Ucapkan selamat tinggal pada selisih barang. SellGo mengotomatisasi pencatatan stok yang dibawa sales dari gudang langsung, memastikan setiap pergerakan produk terdata.",
-      images: "/step/step02.png",
+      title: "Stock Entry",
+      subtitle: "Warehouse Stock Withdrawal Quantity",
+      desc: "Say goodbye to inventory discrepancies. SellGo automates the recording of stock taken directly from the warehouse, ensuring every product movement is accurately tracked.",
+      images: "/step/step02.jpg",
     },
     {
       step: "STEP 03",
-      title: "Jadwalkan Kunjungan",
-      subtitle: "Pemetaan Rute Teroptimasi",
-      desc: "Buat setiap perjalanan lebih efisien dan produktif. Sistem SellGo memungkinkan penyusunan rute toko harian yang strategis dan real-time. Tidak ada lagi rute tumpang tindih atau waktu berharga yang terbuang di jalan.",
+      title: "Schedule Visits",
+      subtitle: "Optimized Route Mapping",
+      desc: "Maximize trip efficiency and productivity. SellGo enables strategic, real-time daily store routing, eliminating overlapping paths and wasted travel time.",
       images: "/step/step03.png",
     },
     {
       step: "STEP 04",
-      title: "Melakukan Kunjungan",
+      title: "Visitation",
       subtitle: "",
-      desc: "Kunjungan dilakukan berdasarkan jadwal dan prioritas yang jelas, meningkatkan peluang konversi karena tim fokus pada target yang tepat sasaran.",
-      images: ["/step/step04.png", "/step/step04-2.png"],
+      desc: "Visits are executed based on clear schedules and priorities, increasing conversion rates by keeping the team focused on the right targets.",
+      images: ["/step/step04-2.jpg", "/step/step04.png"],
     },
     {
       step: "STEP 05",
-      title: "Melakukan Transaksi",
-      subtitle: "Transaksi & Pelaporan Instan",
-      desc: "Setiap transaksi dicatat secara real-time, mempercepat alur kerja, dan memberikan data hasil dari penjualan.",
-      images: ["/step/step05.png", "/step/step05-2.png"],
+      title: "Transaction",
+      subtitle: "Live Transactions & Reporting",
+      desc: "Every transaction is recorded in real-time, streamlining workflows and providing comprehensive sales performance data.",
+      images: ["/step/step05.jpg", "/step/step05-2.jpg"],
     },
     {
       step: "STEP 06",
-      title: "Rekonsiliasi & Pelaporan",
-      subtitle: "Validasi Akhir & Analitik Penjualan",
-      desc: "Proses rekonsiliasi setoran tunai dan sisa produk antara sales lapangan dan admin gudang kini terdigitalisasi dan tervalidasi oleh sistem. Akses laporan penjualan harian hingga bulanan secara instan untuk memantau performa tim dan merancang strategi bisnis ke depan.",
+      title: "Reconciliation & Reporting",
+      subtitle: "Final Verification & Sales Insights",
+      desc: "Digitized reconciliation of cash and inventory ensures seamless validation between field sales and the warehouse. Access real-time sales analytics to monitor team productivity and shape your long-term business roadmap.",
       images: "/step/step06.png",
     },
   ];
@@ -79,8 +79,8 @@ export const HowItWorks = () => {
           HOW THIS APP WORK
         </h1>
         <p className="mt-4 text-sm font-medium text-black lg:mt-8 lg:text-4xl xl:mt-2 xl:text-lg">
-          Ubah cara kerja tim sales anda dengan efisiensi dan transparansi di
-          setiap langkah
+          Revolutionize your sales workflow through efficiency and transparency
+          in every step
         </p>
       </div>
 

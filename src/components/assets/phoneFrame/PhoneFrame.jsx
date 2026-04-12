@@ -15,7 +15,7 @@ export const PhoneFrame = ({ children, screenshot, index = 0 }) => {
   const handleSwap = (e) => {
     if (isArray) {
       e.stopPropagation();
-      setActiveIdx((prev) => (prev === 0 ? 1 : 0));
+      setActiveIdx((prev) => (prev + 1) % screenshot.length);
     }
   };
 
@@ -44,7 +44,7 @@ export const PhoneFrame = ({ children, screenshot, index = 0 }) => {
             transition={smoothSpring}
             className="pointer-events-none absolute inset-0 z-0"
           >
-            <div className="aspect-9/19.5 lg:border-12 w-full overflow-hidden rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-900 shadow-xl lg:rounded-[3.5rem] xl:rounded-[2.8rem] xl:border-8">
+            <div className="aspect-9/19.5 lg:border-12 w-full overflow-hidden rounded-[2.5rem] border-[6px] border-black bg-black shadow-xl lg:rounded-[3.5rem] xl:rounded-[2.8rem] xl:border-8">
               <div className="relative h-full w-full overflow-hidden rounded-[1.8rem] bg-white pt-4 lg:rounded-[2.8rem] xl:rounded-[2.2rem]">
                 <img
                   src={backImage}
@@ -64,13 +64,13 @@ export const PhoneFrame = ({ children, screenshot, index = 0 }) => {
         onClick={handleSwap}
         layout
         transition={smoothSpring}
-        className={`aspect-9/19.5 lg:border-12 relative z-20 w-full overflow-hidden rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-900 shadow-2xl lg:rounded-[3.5rem] xl:rounded-[2.8rem] xl:border-8 ${
+        className={`aspect-9/19.5 lg:border-12 relative z-20 w-full overflow-hidden rounded-[2.5rem] border-[6px] border-black bg-black shadow-2xl lg:rounded-[3.5rem] xl:rounded-[2.8rem] xl:border-8 ${
           isArray ? "pointer-events-auto cursor-pointer" : "pointer-events-auto"
         }`}
       >
-        <div className="absolute left-1/2 top-0 z-40 h-4 w-20 -translate-x-1/2 rounded-b-xl bg-slate-900 lg:h-8 lg:w-28 xl:h-5 xl:w-20"></div>
+        <div className="absolute left-1/2 top-0 z-40 h-4 w-20 -translate-x-1/2 rounded-b-xl bg-black lg:h-8 lg:w-28 xl:h-2 xl:w-20"></div>
 
-        <div className="relative h-full w-full overflow-hidden rounded-[1.8rem] bg-white pt-4 lg:rounded-[2.8rem] xl:rounded-[2.2rem]">
+        <div className="relative h-full w-full overflow-hidden rounded-[1.8rem] bg-white pt-1 lg:rounded-[2.8rem] xl:rounded-[2.2rem]">
           <AnimatePresence mode="popLayout">
             <motion.img
               key={currentImage}
@@ -98,7 +98,11 @@ export const PhoneFrame = ({ children, screenshot, index = 0 }) => {
         >
           {/* Ikon berputar pas diklik */}
           <FaSyncAlt
-            className={`${activeIdx === 1 ? "rotate-180" : "rotate-0"} text-[10px] text-sky-500 transition-transform duration-500 ease-in-out lg:text-4xl xl:text-lg`}
+            style={{
+              transform: `rotate(${activeIdx * 180}deg)`,
+              transition: "transform 0.5s ease-in-out",
+            }}
+            className="text-[10px] text-sky-500 lg:text-4xl xl:text-lg"
           />
           <span className="text-sm text-black lg:text-3xl xl:text-sm">
             Tap to Switch Screen

@@ -40,16 +40,17 @@ export const WhatIs = () => {
   ];
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#f4f7f9] px-6 py-8 font-sans lg:px-20 lg:py-16">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-white px-6 py-8 font-sans lg:px-20 lg:py-16">
       {/* Background Decor */}
-      <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-sky-100 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
 
       {/* Header Logo - Center */}
-      <div className="mb-12 flex w-full justify-center lg:mb-20">
+      <div className="mb-12 flex w-full justify-center lg:mb-20 xl:mb-20">
         <img
           src="/Teks Sellgo.png"
           alt="SellGo Logo"
-          className="h-auto w-[45%] lg:w-[20%]"
+          className="h-auto w-[40%] lg:w-[50%] xl:w-[20%]"
         />
       </div>
 
@@ -99,7 +100,7 @@ export const WhatIs = () => {
             <div className="space-y-6">
               {coreValues.map((value, index) => (
                 <div key={index} className="group">
-                  <h3 className="text-base font-bold pb-0 xl:pb-0 lg:pb-4 text-black lg:text-5xl xl:text-lg">
+                  <h3 className="pb-0 text-base font-bold text-black lg:pb-4 lg:text-5xl xl:pb-0 xl:text-lg">
                     {value.title}
                   </h3>
                   <p className="text-base font-normal text-black lg:text-4xl xl:text-lg">

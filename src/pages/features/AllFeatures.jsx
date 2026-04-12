@@ -4,18 +4,18 @@ import { useNavigate } from "react-router-dom";
 import { PhoneFrame } from "../../components/assets/phoneFrame/PhoneFrame";
 import { FeatureTabs } from "../../components/assets/features/FeatureTabs";
 import { FaArrowLeft, FaHome, FaCheckCircle } from "react-icons/fa";
-import { 
-  MdMap, 
-  MdTimeline, 
-  MdMonetizationOn, 
-  MdInsights, 
-  MdStore, 
-  MdHistory 
+import {
+  MdMap,
+  MdTimeline,
+  MdMonetizationOn,
+  MdInsights,
+  MdStore,
+  MdHistory,
 } from "react-icons/md";
 
 export const AllFeatures = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("Tracking System");
+  const [activeTab, setActiveTab] = useState("Tracking & Visit System");
 
   useEffect(() => {
     window.scrollTo({
@@ -27,13 +27,17 @@ export const AllFeatures = () => {
 
   const features = [
     {
-      id: "Tracking System",
+      id: "Tracking & Visit System",
       icon: <MdMap />,
       contents: [
         {
           title: "Tracking & Visit Monitoring System",
-          subtitle: "Pantau Pergerakan &  Data Kunjungan Real-time.",
-          image: "/features/Dashboard.png",
+          subtitle: "Real-Time Movement Tracking and Visit Analytics",
+          image: [
+            "/features/tracking01.png",
+            "/features/tracking02.jpg",
+            "/features/tracking03.png",
+          ],
           list: [
             // "Jadwal tahunan terorganisir",
             // "Monitoring progress",
@@ -44,30 +48,13 @@ export const AllFeatures = () => {
       ],
     },
     {
-      id: "Visit Monitoring",
-      icon: <MdTimeline />,
-      contents: [
-        {
-          title: "Tracking & Visit Monitoring System",
-          subtitle: "Pantau Pergerakan &  Data Kunjungan Real-time.",
-          image: "/features/Direct Task.png",
-          list: [
-            // "Quick assign",
-            // "Notifikasi real-time",
-            // "Prioritas tugas",
-            // "Foto bukti kerja",
-          ],
-        },
-      ],
-    },
-    {
       id: "Revenue",
       icon: <MdMonetizationOn />,
       contents: [
         {
           title: "Real-time Sales Revenue",
-          subtitle: "Kecepatan Pengambilan Keputusan & Transparansi Arus Kas.",
-          image: "/features/Inventory.png",
+          subtitle: "Speed ​​of Decision Making and Cash Flow Transparency",
+          image: ["/features/transaksi01.png", "/features/transaksi02.png"],
           list: [
             //   "Update stok otomatis",
             //   "Alert stok rendah",
@@ -83,8 +70,9 @@ export const AllFeatures = () => {
       contents: [
         {
           title: "Product Insights",
-          subtitle: "Optimasi Stok & Atur Strategi Bisnis Sesuai Tren Pasar.",
-          image: "/features/Stock Opname.png",
+          subtitle:
+            "Optimizing Stock and Aligning Business Strategy with Market Trends",
+          image: ["/features/produk01.png", "/features/produk02.png"],
           list: [
             //   "Scan barcode",
             //   "Rekonsiliasi data",
@@ -101,8 +89,8 @@ export const AllFeatures = () => {
         {
           title: "Store Profile",
           subtitle:
-            "Database Pelanggan  Terintegrasi Langsung Dengan  Profile  Toko.",
-          image: "/features/Stock Opname.png",
+            "Integrated Customer Database Linked Directly to Store Profiles",
+          image: ["/features/profile01.png", "/features/profile02.png"],
           list: [
             //   "Scan barcode",
             //   "Rekonsiliasi data",
@@ -119,8 +107,8 @@ export const AllFeatures = () => {
         {
           title: "Billing History",
           subtitle:
-            "Seluruh rekam jejak transaksi, nota, dan status pembayaran tersimpan rapi secara digital.",
-          image: "/features/Stock Opname.png",
+            "All transaction records, invoices, and payment statuses are systematically archived in a digital format",
+          image: ["/features/transaksi01.png", "/features/transaksi02.png"],
           list: [
             //   "Scan barcode",
             //   "Rekonsiliasi data",
@@ -195,11 +183,11 @@ export const AllFeatures = () => {
                     <h2 className="text-primary text-4xl font-black leading-tight lg:text-7xl xl:text-5xl">
                       {content.title}
                     </h2>
-                    <p className="text-xl font-bold text-sky-400 lg:text-4xl xl:text-2xl">
+                    <p className="text-xl font-bold leading-tight text-sky-400 lg:text-5xl xl:text-2xl">
                       {content.subtitle}
                     </p>
 
-                    <div className="space-y-4 pt-4">
+                    {/* <div className="space-y-4 pt-4">
                       {content.list.map((item, i) => (
                         <motion.div
                           initial={{ opacity: 0, x: 20 }}
@@ -214,7 +202,7 @@ export const AllFeatures = () => {
                           </span>
                         </motion.div>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}
