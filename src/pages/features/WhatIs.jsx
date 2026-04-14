@@ -45,6 +45,33 @@ export const WhatIs = () => {
       <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
 
+      {/* Top Navigation */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative z-10 mb-8 flex w-full items-center justify-between lg:mb-16 xl:mb-12"
+      >
+        {/* Tombol Kembali - kiri atas */}
+        <button
+          onClick={() => navigate(-1)}
+          className="hover:bg-primary group flex cursor-pointer items-center gap-2 rounded-full border border-primary bg-white px-4 py-2 shadow-lg transition-all hover:scale-110 lg:gap-4 lg:px-8 lg:py-4 xl:gap-3 xl:px-6 xl:py-3"
+        >
+          <FaArrowLeft className="text-primary text-base group-hover:text-white lg:text-4xl xl:text-lg" />
+          <span className="text-primary text-sm font-bold uppercase group-hover:text-white lg:text-3xl xl:text-base">
+            Back
+          </span>
+        </button>
+
+        {/* Tombol Home - kanan atas */}
+        <button
+          onClick={() => navigate("/")}
+          className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:text-white lg:h-24 lg:w-24 xl:h-12 xl:w-12"
+        >
+          <FaHome className="text-lg lg:text-5xl xl:text-xl" />
+        </button>
+      </motion.div>
+
       {/* Header Logo - Center */}
       <div className="mb-12 flex w-full justify-center lg:mb-20 xl:mb-20">
         <img
@@ -66,7 +93,7 @@ export const WhatIs = () => {
             <h1 className="text-primary text-3xl font-black lg:text-7xl xl:text-4xl">
               What is SellGo?
             </h1>
-            <p className="max-w-4xl text-base font-medium leading-relaxed text-black lg:text-4xl xl:text-lg">
+            <p className="max-w-4xl text-justify text-base font-medium leading-relaxed text-black lg:text-4xl xl:text-lg">
               SellGo is not just a sales tracking application. It is a system
               designed to transform your field sales operations into structured,
               measurable, and high-performing business activities.
@@ -118,39 +145,6 @@ export const WhatIs = () => {
               controlled, and better equipped to scale with confidence.
             </p>
           </section>
-        </motion.div>
-      </div>
-
-      {/* Bottom Navigation */}
-      <div className="mt-16 flex w-full justify-center lg:mt-24 xl:mt-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex items-center gap-6 p-3 lg:gap-8 lg:p-6 xl:gap-4 xl:p-4"
-        >
-          {/* Tombol Kembali */}
-          <button
-            onClick={() => navigate(-1)}
-            className="group flex cursor-pointer items-center gap-4 rounded-full border border-slate-100 bg-white px-6 py-2 shadow-lg transition-all hover:scale-110 hover:bg-slate-50 lg:px-12 lg:py-8 xl:px-4 xl:py-4"
-          >
-            <FaArrowLeft className="group-hover:text-primary text-lg text-slate-500 lg:text-4xl xl:text-xl" />
-            <span className="group-hover:text-primary text-sm font-bold uppercase text-slate-500 lg:text-2xl xl:text-base">
-              Kembali
-            </span>
-          </button>
-
-          {/* Divider vertikal tipis agar mirip desain referensi */}
-          <div className="h-8 w-1 bg-slate-200 lg:h-16" />
-
-          {/* Tombol Home */}
-          <button
-            onClick={() => navigate("/")}
-            className="bg-primary/10 text-primary hover:bg-primary flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:text-white lg:h-24 lg:w-24 xl:h-14 xl:w-14"
-          >
-            <FaHome className="text-xl lg:text-5xl xl:text-2xl" />
-          </button>
         </motion.div>
       </div>
     </div>

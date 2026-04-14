@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { PhoneFrame } from "../../components/assets/phoneFrame/PhoneFrame";
 import { FeatureTabs } from "../../components/assets/features/FeatureTabs";
-import { FaArrowLeft, FaHome, FaCheckCircle } from "react-icons/fa";
+import { FaArrowLeft, FaHome } from "react-icons/fa";
 import {
   MdMap,
-  MdTimeline,
   MdMonetizationOn,
   MdInsights,
   MdStore,
@@ -128,6 +127,31 @@ export const AllFeatures = () => {
       <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-sky-200 blur-[120px]" />
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-sky-200 blur-[120px]" />
 
+      {/* Top Navigation */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex w-full items-center justify-between px-6 pt-6 lg:px-12 xl:px-8"
+      >
+        <button
+          onClick={() => navigate(-1)}
+          className="hover:bg-primary border-primary group flex cursor-pointer items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-lg transition-all hover:scale-110 lg:gap-4 lg:px-8 lg:py-4 xl:gap-3 xl:px-6 xl:py-3"
+        >
+          <FaArrowLeft className="text-primary text-base group-hover:text-white lg:text-4xl xl:text-lg" />
+          <span className="text-primary text-sm font-bold uppercase group-hover:text-white lg:text-3xl xl:text-base">
+            Back
+          </span>
+        </button>
+
+        <button
+          onClick={() => navigate("/")}
+          className="bg-primary/10 text-primary hover:bg-primary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:text-white lg:h-24 lg:w-24 xl:h-12 xl:w-12"
+        >
+          <FaHome className="text-lg lg:text-5xl xl:text-xl" />
+        </button>
+      </motion.div>
+
       <div className="flex w-full max-w-7xl flex-col items-center">
         {/* Header Section */}
         <div className="mt-6 flex w-full justify-center">
@@ -142,7 +166,7 @@ export const AllFeatures = () => {
             Features
           </h1>
           <p className="mt-4 text-sm font-semibold text-slate-500 lg:text-4xl xl:text-lg">
-            Lihat apa saja yang dapat anda kelola
+            Explore what you can manage
           </p>
         </div>
 
@@ -155,7 +179,7 @@ export const AllFeatures = () => {
           />
         </div>
 
-        {/* Content Section - Dinamis Kanan Kiri */}
+        {/* Content Section - Atas Bawah */}
         <div className="flex w-full items-center justify-center bg-slate-100 p-10">
           <AnimatePresence mode="wait">
             <motion.div
@@ -164,80 +188,33 @@ export const AllFeatures = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="flex w-full flex-col gap-20"
+              className="flex w-full flex-col gap-10"
             >
               {currentData.contents.map((content, index) => (
                 <div
                   key={index}
-                  className={`flex w-full flex-col items-center gap-12 lg:gap-16 ${currentData.contents.length > 1 ? "lg:flex-row lg:justify-center" : "lg:flex-row lg:justify-center lg:gap-6"} ${index % 2 !== 0 && currentData.contents.length > 1 ? "lg:flex-row-reverse" : ""}`}
+                  className="flex w-full flex-col items-center gap-20"
                 >
-                  {/* Phone Frame Section */}
-                  <div className="flex w-full flex-1 justify-center">
-                    <div className="max-w-62.5 lg:max-w-100 xl:max-w-65 w-full">
-                      <PhoneFrame screenshot={content.image} />
-                    </div>
-                  </div>
-
-                  {/* Details Section */}
-                  <div className="w-full flex-1 space-y-4 text-left">
+                  {/* Title & Subtitle - Atas */}
+                  <div className="w-full space-y-3 text-center">
                     <h2 className="text-primary text-4xl font-black leading-tight lg:text-7xl xl:text-5xl">
                       {content.title}
                     </h2>
                     <p className="text-xl font-bold leading-tight text-sky-400 lg:text-5xl xl:text-2xl">
                       {content.subtitle}
                     </p>
+                  </div>
 
-                    {/* <div className="space-y-4 pt-4">
-                      {content.list.map((item, i) => (
-                        <motion.div
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: i * 0.1 }}
-                          key={i}
-                          className="flex items-center gap-4 rounded-2xl border border-slate-300 bg-white p-4 shadow-sm lg:p-4 xl:p-4"
-                        >
-                          <FaCheckCircle className="text-primary text-lg lg:text-2xl xl:text-xl" />
-                          <span className="font-semibold text-black lg:text-3xl xl:text-lg">
-                            {item}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div> */}
+                  {/* Phone Frame - Bawah */}
+                  <div className="flex w-full justify-center">
+                    <div className="max-w-62.5 lg:max-w-100 xl:max-w-65 w-full">
+                      <PhoneFrame screenshot={content.image} />
+                    </div>
                   </div>
                 </div>
               ))}
             </motion.div>
           </AnimatePresence>
-        </div>
-
-        {/* Bottom Navigation */}
-        <div className="mt-16 flex w-full justify-center lg:mt-24 xl:mt-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="flex items-center gap-6 p-3 lg:gap-8 lg:p-6 xl:gap-4 xl:p-4"
-          >
-            <button
-              onClick={() => navigate(-1)}
-              className="group flex cursor-pointer items-center gap-4 rounded-full border border-slate-100 bg-white px-6 py-2 shadow-lg transition-all hover:scale-110 hover:bg-slate-50 lg:px-12 lg:py-8 xl:px-4 xl:py-4"
-            >
-              <FaArrowLeft className="group-hover:text-primary text-lg text-slate-500 lg:text-4xl xl:text-xl" />
-              <span className="group-hover:text-primary text-sm font-bold uppercase text-slate-500 lg:text-2xl xl:text-base">
-                Kembali
-              </span>
-            </button>
-
-            <div className="h-8 w-1 bg-slate-200 lg:h-16" />
-
-            <button
-              onClick={() => navigate("/")}
-              className="bg-primary/10 text-primary hover:bg-primary flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:text-white lg:h-24 lg:w-24 xl:h-14 xl:w-14"
-            >
-              <FaHome className="text-xl lg:text-5xl xl:text-2xl" />
-            </button>
-          </motion.div>
         </div>
       </div>
     </div>
