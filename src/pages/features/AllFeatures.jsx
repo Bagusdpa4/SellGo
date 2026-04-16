@@ -14,7 +14,7 @@ import {
 
 export const AllFeatures = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("Tracking & Visit System");
+  const [activeTab, setActiveTab] = useState("Tracking System");
 
   useEffect(() => {
     window.scrollTo({
@@ -26,12 +26,12 @@ export const AllFeatures = () => {
 
   const features = [
     {
-      id: "Tracking & Visit System",
+      id: "Tracking System",
       icon: <MdMap />,
       contents: [
         {
-          title: "Tracking & Visit Monitoring System",
-          subtitle: "Real-Time Movement Tracking and Visit Analytics",
+          title: "Tracking & Visit Monitoring",
+          subtitle: "Real-Time Movement Tracking & Visit Analytics.",
           image: [
             "/features/tracking01.png",
             "/features/tracking02.jpg",
@@ -47,12 +47,12 @@ export const AllFeatures = () => {
       ],
     },
     {
-      id: "Revenue",
+      id: "Revenue Tracking",
       icon: <MdMonetizationOn />,
       contents: [
         {
-          title: "Real-time Sales Revenue",
-          subtitle: "Speed ​​of Decision Making and Cash Flow Transparency",
+          title: "Real-Time Sales Revenue",
+          subtitle: "Faster Decision-Making & Cash Flow Transparency.",
           image: ["/features/transaksi01.png", "/features/transaksi02.png"],
           list: [
             //   "Update stok otomatis",
@@ -70,7 +70,7 @@ export const AllFeatures = () => {
         {
           title: "Product Insights",
           subtitle:
-            "Optimizing Stock and Aligning Business Strategy with Market Trends",
+            "Optimize Stock and Align Your Business Strategy with Market Trends.",
           image: ["/features/produk01.png", "/features/produk02.png"],
           list: [
             //   "Scan barcode",
@@ -82,13 +82,13 @@ export const AllFeatures = () => {
       ],
     },
     {
-      id: "Store Profile",
+      id: "Store Profiles",
       icon: <MdStore />,
       contents: [
         {
-          title: "Store Profile",
+          title: "Store Profiles",
           subtitle:
-            "Integrated Customer Database Linked Directly to Store Profiles",
+            "An integrated customer database directly linked to each store profile.",
           image: ["/features/profile01.png", "/features/profile02.png"],
           list: [
             //   "Scan barcode",
@@ -100,13 +100,13 @@ export const AllFeatures = () => {
       ],
     },
     {
-      id: "Billing History",
+      id: "Transaction History",
       icon: <MdHistory />,
       contents: [
         {
-          title: "Billing History",
+          title: "Transaction History",
           subtitle:
-            "All transaction records, invoices, and payment statuses are systematically archived in a digital format",
+            "All transaction records, invoices, and payment statuses are securely stored and organized in a digital format.",
           image: ["/features/transaksi01.png", "/features/transaksi02.png"],
           list: [
             //   "Scan barcode",

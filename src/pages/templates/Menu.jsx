@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaHome } from "react-icons/fa";
-import { FaArrowRight, FaArrowLeft, FaRocket } from "react-icons/fa6";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import { HiOutlineQuestionMarkCircle } from "react-icons/hi2";
 import { MdOutlineFeaturedPlayList } from "react-icons/md";
 import { LuWorkflow } from "react-icons/lu";
+import { IoRocketOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 export const Menu = () => {
@@ -31,7 +32,7 @@ export const Menu = () => {
     },
     {
       title: "Request Demo",
-      icon: <FaRocket />,
+      icon: <IoRocketOutline />,
       bgIcon: "bg-slate-200",
       path: "/req-demo",
     },
@@ -75,8 +76,7 @@ export const Menu = () => {
             A sales application for sales teams
           </h1>
           <p className="mt-4 px-4 text-sm font-normal text-black lg:mt-4 lg:px-20 lg:text-[40px] xl:mt-0 xl:px-10 xl:text-lg">
-            Monitor visits, sales, products, and team movement tracking in real
-            time
+            Monitor visits, sales, products, and team movements in real time.
           </p>
         </div>
 

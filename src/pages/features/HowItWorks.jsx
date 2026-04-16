@@ -18,44 +18,44 @@ export const HowItWorks = () => {
   const steps = [
     {
       step: "STEP 01",
-      title: "Absence",
-      subtitle: "Absence Smart Attendance & Geo-Validation",
-      desc: "Selfie-based attendance and geotagging features provide management with full transparency regarding the precise time and location your sales team starts their day.",
+      title: "Attendance",
+      subtitle: "Smart Attendance & Geo-Validation",
+      desc: "Selfie-based attendance and geotagging provide full transparency into when and where your sales team starts their day.",
       images: ["/step/step01.jpg", "/step/step01-2.jpg"],
     },
     {
       step: "STEP 02",
-      title: "Stock Entry",
-      subtitle: "Warehouse Stock Withdrawal Quantity",
-      desc: "Say goodbye to inventory discrepancies. SellGo automates the recording of stock taken directly from the warehouse, ensuring every product movement is accurately tracked.",
+      title: "Inventory Control",
+      subtitle: "Warehouse Stock Withdrawal",
+      desc: "Eliminate inventory discrepancies. SellGo automatically records stock taken from the warehouse, ensuring every product movement is accurately tracked.",
       images: "/step/step02.jpg",
     },
     {
       step: "STEP 03",
-      title: "Schedule Visits",
-      subtitle: "Optimized Route Mapping",
-      desc: "Maximize trip efficiency and productivity. SellGo enables strategic, real-time daily store routing, eliminating overlapping paths and wasted travel time.",
+      title: "Sales Activities",
+      subtitle: "Optimized Route Planning",
+      desc: "Maximize trip efficiency and productivity. SellGo enables strategic, real-time daily store routing, eliminating overlapping routes and wasted travel time.",
       images: "/step/step03.png",
     },
     {
       step: "STEP 04",
-      title: "Visitation",
+      title: "Customer Visits",
       subtitle: "",
-      desc: "Visits are executed based on clear schedules and priorities, increasing conversion rates by keeping the team focused on the right targets.",
+      desc: "Visits are carried out based on clear schedules and priorities, helping increase conversion rates by keeping the team focused on the right targets.",
       images: ["/step/step04-2.jpg", "/step/step04.png"],
     },
     {
       step: "STEP 05",
-      title: "Transaction",
+      title: "Transactions",
       subtitle: "Live Transactions & Reporting",
-      desc: "Every transaction is recorded in real-time, streamlining workflows and providing comprehensive sales performance data.",
+      desc: "Every transaction is recorded in real time, streamlining workflows and providing comprehensive sales performance insights.",
       images: ["/step/step05.jpg", "/step/step05-2.jpg"],
     },
     {
       step: "STEP 06",
       title: "Reconciliation & Reporting",
       subtitle: "Final Verification & Sales Insights",
-      desc: "Digitized reconciliation of cash and inventory ensures seamless validation between field sales and the warehouse. Access real-time sales analytics to monitor team productivity and shape your long-term business roadmap.",
+      desc: " Digitized reconciliation of cash and inventory ensures seamless validation between field sales and the warehouse. Access real-time sales analytics to monitor team performance and support your long-term business growth.",
       images: "/step/step06.png",
     },
   ];
@@ -144,7 +144,7 @@ export const HowItWorks = () => {
 
             {/* Phone Frame Section */}
             <div className="flex w-full flex-1 justify-center">
-              <div className="max-w-62.5 lg:max-w-100 xl:max-w-65 w-full">
+              <div className="max-w-62.5 lg:max-w-100 w-full xl:max-w-80">
                 <PhoneFrame screenshot={item.images} index={index} />
               </div>
             </div>
