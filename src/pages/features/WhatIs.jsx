@@ -49,7 +49,7 @@ export const WhatIs = () => {
     <div className="relative flex min-h-screen flex-col overflow-hidden bg-white px-6 py-8 font-sans lg:px-10 lg:py-10 xl:px-4 xl:py-10">
       {/* Background Decor */}
       <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 -right-20 h-80 w-80 rounded-full bg-sky-200 blur-[120px]" />
 
       {/* Top Navigation */}
       <motion.div
@@ -104,8 +104,8 @@ export const WhatIs = () => {
           </section>
 
           {/* CORE PILLARS */}
-          <section className="space-y-4">
-            <span className="text-xs font-semibold uppercase tracking-widest text-slate-500 lg:text-4xl xl:text-xl">
+          <section className="space-y-4 rounded-2xl bg-slate-100 p-6">
+            <span className="text-xs font-semibold uppercase tracking-widest text-slate-500 lg:text-3xl xl:text-base">
               Core Pillars
             </span>
             <div className="space-y-6 pt-10">
@@ -120,7 +120,7 @@ export const WhatIs = () => {
                     duration: 0.4,
                     ease: "easeOut",
                   }}
-                  className="flex items-center gap-4 rounded-2xl border border-slate-300 bg-white px-5 py-6 shadow-xl"
+                  className="flex items-center gap-4 rounded-2xl border border-slate-400 bg-white px-5 py-6 shadow-xl"
                 >
                   <div
                     className={`flex h-10 w-10 shrink-0 items-center justify-center self-center rounded-xl lg:h-24 lg:w-24 xl:h-12 xl:w-12 ${item.bgIcon}`}
